@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilareria - Librería de Pilares</title>
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Íconos Font Awesome (CDN externo) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===================== HEADER / NAVEGACIÓN ===================== -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <span class="logo-text">Pilareria</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <!-- Icono del carrito con contador visible -->
+            <div class="cart-icon-wrapper" id="cartIconWrapper" title="Ver carrito">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-counter" id="cartCounter">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===================== SECCIÓN HERO / BANNER ===================== -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <!-- Imagen principal del banner: reemplazar hero-bg.jpg con tu imagen -->
+            <img src="img/hero-bg.jpg" alt="Banner librería" class="hero-img"
+                 onerror="this.style.display='none'">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">...Creando nuevos mundos, historias y recuerdos</h1>
+            <p class="hero-subtitle">Vivir consiste en construir futuros recuerdos</p>
+        </div>
+    </section>
+
+    <!-- ===================== SECCIÓN CATÁLOGO ===================== -->
+    <section class="catalog-section" id="catalogo">
+        <h2 class="section-title">Catálogo</h2>
+
+        <!-- Controles: barra de búsqueda + filtro de categoría -->
+        <div class="catalog-controls">
+            <div class="search-bar">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Buscar por título o autor..."
+                    aria-label="Buscar libro por título o autor"
+                >
+                <button id="searchBtn" class="btn-search">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </div>
+            <div class="filter-category">
+                <!-- Las opciones de categoría se insertan dinámicamente -->
+                <select id="categoryFilter" aria-label="Filtrar por categoría">
+                    <option value="todas">Todas las categorías</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grid donde se renderizan las tarjetas de libros -->
+        <div class="books-grid" id="booksGrid"></div>
+
+        <!-- Mensaje de sin resultados -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-book-open"></i>
+            <p>No se encontraron libros con ese criterio de búsqueda o filtrado.</p>
+        </div>
+
+        <!-- Paginación generada dinámicamente -->
+        <div class="pagination" id="pagination" aria-label="Paginación del catálogo"></div>
+    </section>
+
+    <!-- ===================== SECCIÓN SOBRE NOSOTROS ===================== -->
+    <section class="about-section" id="nosotros">
+        <h2 class="section-title">Conoce la Pilareria</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>La Pilareria es una librería ideal para los amantes de la literatura.</p>
+                <p>
+                    Además del servicio de venta de libros y productos en línea, puedes visitar
+                    nuestra sucursal y acompañar tu lectura con una taza de café o bebida de tu
+                    elección, o disfrutar de los diversos eventos culturales que tenemos para ti.
+                </p>
+                <p>Síguenos en redes sociales y mantente atento a la cartelera de eventos.</p>
+                <p><em>¡Ven a Librería de Pilares, en La Pilareria, te esperamos!</em></p>
+            </div>
+            <div class="about-image">
+                <!-- Imagen de la librería: reemplazar libreria.jpg con tu imagen -->
+                <img src="img/libreria.jpg" alt="Interior de Librería El Túnel"
+                     onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-store\'></i><p>Agregar imagen aquí</p></div>'">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer" id="contacto">
+        <div class="footer-content">
+
+            <!-- Columna 1: Datos de contacto -->
+            <div class="footer-col">
+                <h3>Librería "La Pilareria"</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Municipio Libre 48, Portales Oriente, Benito Juárez, 03570 Ciudad de México, CDMX</p>
+                <p><i class="fas fa-phone"></i> (+52) 55-5555-5555</p>
+                <p><i class="fas fa-envelope"></i> info@librerapilares.com</p>
+                <p><i class="fas fa-clock"></i> Lunes a Sábados: 10am - 8pm</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Links internos -->
+            <div class="footer-col">
+                <h3>Conócenos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Acerca de La Pilareria</a></li>
+                    <li><a href="#">Tarjeta de cliente frecuente</a></li>
+                    <li><a href="#">Ventas por mayoreo</a></li>
+                    <li><a href="#">Facturación</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Aviso de privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Newsletter -->
+            <div class="footer-col">
+                <h3>Regístrate</h3>
+                <p>Recibe noticias de promociones, eventos y actualizaciones.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Ingresa tu email"
+                           aria-label="Email para newsletter" required>
+                    <button type="submit" class="btn-newsletter">Suscribir</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 La Pilareria. Todos los derechos reservados. | Agencia Digital de Innovación Pública | Escuela de Código</p>
+        </div>
+    </footer>
+
+    <!-- ===================== MODAL DEL CARRITO ===================== -->
+    <div class="cart-modal-overlay" id="cartModalOverlay"
+         role="dialog" aria-modal="true" aria-labelledby="cartModalTitle">
+        <div class="cart-modal">
+
+            <!-- Cabecera del modal -->
+            <div class="cart-modal-header">
+                <h2 id="cartModalTitle">Tu Carrito de Compras</h2>
+                <button class="cart-close-btn" id="cartCloseBtn" aria-label="Cerrar carrito">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Lista de productos (contenido dinámico) -->
+            <div class="cart-modal-body" id="cartModalBody"></div>
+
+            <!-- Pie del modal: total + acciones -->
+            <div class="cart-modal-footer">
+                <p class="cart-total">Total: <span id="cartTotal">$0.00</span></p>
+                <div class="cart-actions">
+                    <button class="btn-empty-cart" id="emptyCartBtn">
+                        <i class="fas fa-trash-alt"></i> Vaciar carrito
+                    </button>
+                    <button class="btn-checkout" id="checkoutBtn">
+                        <i class="fas fa-credit-card"></i> Pagar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SCRIPTS EXTERNOS ===================== -->
+    <!-- Orden: datos → catálogo → carrito → inicialización -->
+    <script src="js/data.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
